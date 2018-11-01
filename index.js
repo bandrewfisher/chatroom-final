@@ -18,14 +18,15 @@ io.on('connection', function(socket) {
   socket.on('chat message', function(msg) {
     io.emit('chat message', msg);
 
-    if(msg.trim() != "") {
-       var d = new Date();
-    var n = d.toLocaleTimeString()
-    msg += " " + n;
-    messages.data.push(msg);
+    if (msg.trim() != "") {
+      var d = new Date();
+      d.setTime(d.getTime() - 21600000);
+      var n = d.toLocaleTimeString();
+      msg += " " + n;
+      messages.data.push(msg);
     }
 
-   
+
 
   });
 });

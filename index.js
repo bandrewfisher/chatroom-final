@@ -17,7 +17,9 @@ app.get('/messages', function(req, res) {
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
-    messages.data.push(msg);
+    if(msg.trim() != "") {
+      messages.data.push(msg);
+    }
   });
 });
 

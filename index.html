@@ -86,11 +86,6 @@
 
     html,
     body {
-      /*    background-position: left top;*/
-      /*background-image: url("https://wallpapercave.com/wp/6mHwgYX.jpg");*/
-      /*  -moz-background-size: cover;*/
-      /*  -o-background-size: cover;*/
-      /*  background-size: cover;*/
       background-color:rgb(237, 242, 248);
       color:		rgb(39, 65, 89);
 
@@ -117,7 +112,7 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
       background-color: #f8f8f8;
       overflow: hidden;
-      background: rgb(131, 200, 252, 0.5);/***************************/
+      background: rgb(131, 200, 252, 0.5);
 
     }
 
@@ -243,9 +238,9 @@
       $scope.chatMessage = "";
 
       $scope.messages = [];
-      // $scope.addMessage = function() {
-      //   console.log($scope.message);
-      // }
+      $scope.addMessage = function() {
+        console.log($scope.message);
+      }
 
       $scope.getMessages = function() {
         $http.get("/messages")
@@ -266,38 +261,8 @@
 </head>
 
 <body ng-app="chatApp" ng-controller="chatCtrl">
-
-  <!--<div class="chat_window">-->
-  <!--  <div class="top_menu">-->
-  <!--    <div class="buttons">-->
-  <!--      <div class="button close"></div>-->
-  <!--      <div class="button minimize"></div>-->
-  <!--      <div class="button maximize"></div>-->
-  <!--    </div>-->
-  <!--    <div class="title">Chat</div>-->
-  <!--  </div>-->
-  <!--  <ul class="messages"></ul>-->
-  <!--  <div class="bottom_wrapper clearfix">-->
-  <!--    <div class="message_input_wrapper"><input class="message_input" placeholder="Type your message here..." /></div>-->
-  <!--    <div class="send_message">-->
-  <!--      <div class="icon"></div>-->
-  <!--      <div class="text">Send</div>-->
-  <!--    </div>-->
-  <!--  </div>-->
-  <!--</div>-->
-  <!--<div class="message_template">-->
-  <!--  <li class="message">-->
-  <div class="avatar"></div>
-  <div class="text_wrapper">
-    <div class="text"></div>
-    <!--    </div>-->
-    <!--  </li>-->
-    <!--</div>-->
-
-
-
     <div class="topMenu">
-      <h1>Post a message</h1>
+      <h1>CS260 Chatroom</h1>
     </div>
     <div class="page">
       <div id="messagebox">
@@ -325,11 +290,6 @@
           $('#mes').val('');
           return false;
         });
-
-        // socket.on('chat message', function(msg) {
-        //   $('#messages').append($('<li>').text(msg));
-        //   window.scrollTo(0, document.body.scrollHeight);
-        // });
       });
     </script>
 </body>
